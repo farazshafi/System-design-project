@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "worker": "ts-node-dev --respawn --transpile-only src/worker/consumer.ts",
     "build": "rimraf dist && tsc",
     "start": "node dist/app.js"
   },
@@ -16,6 +17,7 @@
   "dependencies": {
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
+    "kafkajs": "^2.2.4",
     "pg": "^8.20.0"
   },
   "devDependencies": {

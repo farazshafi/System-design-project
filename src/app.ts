@@ -1,9 +1,12 @@
 import express from "express";
 import eventRoutes from "./routes/event.routes";
 import { limiter } from "./middlewares/limiter.middleware";
+import { connectProducer } from "./kafka/producer";
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+connectProducer().catch(console.error);
 
 app.use(express.json());
 app.use(limiter);
